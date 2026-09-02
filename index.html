@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stephen Ndichu is a commercial leader and electric mobility specialist based in Nairobi, Kenya.">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Stephen Ndichu - Commercial Leader, Electric Mobility</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f5f2ed;
+      --paper-deep: #ede9e1;
+      --paper-soft: #faf8f4;
+      --ink: #1a1714;
+      --ink-soft: #5a5650;
+      --ink-faint: #8b8580;
+      --accent: #9f4318;
+      --accent-soft: #d8a486;
+      --rule: #d4cfc8;
+      --rule-strong: #b8afa5;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "DM Mono", "Courier New", monospace;
+      --rail-w: 280px;
+      --content-w: 790px;
+      --gap: 5.75rem;
+      --inner: 2rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      text-align: left;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(26, 23, 20, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 23, 20, 0.022) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    ::selection {
+      background: var(--accent-soft);
+      color: var(--ink);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 100;
+      transform: translateY(-180%);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.5rem 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .rail {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--rail-w);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem 2.35rem;
+      background: color-mix(in srgb, var(--paper) 94%, white);
+      border-right: 1px solid var(--rule);
+      z-index: 30;
+      overflow-y: auto;
+    }
+
+    .rail::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent);
+    }
+
+    .rail-kicker,
+    .rail-contact-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+      margin-bottom: 0.85rem;
+    }
+
+    .rail-name {
+      margin: 0 0 3.5rem;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+    }
+
+    .rail-name span {
+      display: block;
+      margin-top: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+    }
+
+    .rail-nav ul,
+    .rail-contact ul,
+    .topbar-nav,
+    .hero-metrics,
+    .role-bullets,
+    .impact-list,
+    .language-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .rail-nav li + li {
+      margin-top: 0.28rem;
+    }
+
+    .rail-nav a {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 0.85rem;
+      align-items: center;
+      padding: 0.35rem 0;
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    .rail-nav a::before {
+      content: "";
+      width: 18px;
+      height: 1px;
+      background: var(--rule-strong);
+      transition: width 180ms ease, background-color 180ms ease;
+    }
+
+    .rail-nav a:hover,
+    .rail-nav a.is-active,
+    .topbar-nav a:hover,
+    .topbar-nav a.is-active {
+      color: var(--accent);
+    }
+
+    .rail-nav a.is-active::before {
+      width: 28px;
+      background: var(--accent);
+    }
+
+    .rail-contact {
+      color: var(--ink-faint);
+      font-size: 0.78rem;
+      line-height: 1.65;
+    }
+
+    .rail-contact li + li {
+      margin-top: 0.65rem;
+    }
+
+    .rail-contact a {
+      color: var(--ink-faint);
+      overflow-wrap: anywhere;
+    }
+
+    .topbar {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: color-mix(in srgb, var(--paper) 95%, white);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .topbar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      min-height: 3.55rem;
+      padding: 0.55rem 1.1rem 0.45rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .topbar-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .topbar-name {
+      flex: 0 0 auto;
+      padding-right: 1.15rem;
+      border-right: 1px solid var(--rule);
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .topbar-nav {
+      display: flex;
+      gap: 1.15rem;
+    }
+
+    .topbar-nav a {
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .page {
+      margin-left: var(--rail-w);
+    }
+
+    .content {
+      width: min(100%, var(--content-w));
+      margin: 0 auto;
+      padding: 0 3rem 0;
+    }
+
+    section {
+      scroll-margin-top: 2rem;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 0 var(--gap);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 3px minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: stretch;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-rule {
+      background: var(--accent);
+    }
+
+    .hero-kicker {
+      margin: 0 0 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+    }
+
+    .hero-name {
+      min-height: clamp(7rem, 16vw, 13rem);
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(4.2rem, 9.2vw, 8rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 0.85;
+      color: var(--ink);
+      max-width: 8.6ch;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 0.05em;
+      height: 0.7em;
+      margin-left: 0.05em;
+      background: var(--accent);
+      vertical-align: -0.03em;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .typing-cursor {
+        animation: cursor-blink 850ms step-end infinite;
+      }
+
+      .typing-cursor.is-hidden {
+        animation: none;
+        opacity: 0;
+      }
+
+      @keyframes cursor-blink {
+        0%, 49% {
+          opacity: 1;
+        }
+
+        50%, 100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .typing-cursor {
+        display: none;
+      }
+    }
+
+    .hero-descriptor {
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+      font-style: italic;
+      line-height: 1.45;
+      max-width: 52ch;
+    }
+
+    .hero-statement {
+      max-width: 66ch;
+      margin: 1.15rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.78;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 2.7rem;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+
+    .hero-metric {
+      min-height: 8.25rem;
+      padding: 1.35rem 1.2rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      background: rgba(237, 233, 225, 0.42);
+    }
+
+    .metric-number {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: clamp(1.25rem, 2.3vw, 1.7rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-label {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: var(--gap) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      margin: 0 0 3rem;
+    }
+
+    .section-heading span:first-child {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading span:last-child {
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .experience-tools {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: start;
+      margin: -1rem 0 2.6rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .experience-tools p {
+      max-width: 62ch;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .expand-all {
+      display: none;
+      border: 1px solid var(--rule-strong);
+      background: transparent;
+      color: var(--ink-soft);
+      padding: 0.55rem 0.75rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+
+    .js .expand-all {
+      display: inline-block;
+    }
+
+    .expand-all:hover,
+    .expand-all:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2.25rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0.35rem;
+      width: 1px;
+      background: var(--rule-strong);
+    }
+
+    .role {
+      position: relative;
+      padding: 0 0 3.25rem;
+      margin: 0 0 3.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .role:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .role::before {
+      content: "";
+      position: absolute;
+      left: -2.25rem;
+      top: 0.55rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--rule-strong);
+      transform: translateX(-4px);
+      transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .role.is-active::before,
+    .role:focus-within::before {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--accent-soft);
+    }
+
+    .role-meta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.65rem;
+    }
+
+    .role-company-line {
+      color: var(--ink-soft);
+      font-family: var(--font-display);
+      font-size: 1.18rem;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .role-company {
+      color: var(--ink);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .role-dates {
+      color: var(--ink-faint);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      line-height: 1.45;
+      letter-spacing: 0.02em;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .role-title {
+      margin: 0 0 1rem;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .role-bullets {
+      max-width: 68ch;
+      color: var(--ink-soft);
+    }
+
+    .role-bullets li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.94rem;
+      line-height: 1.72;
+    }
+
+    .role-bullets li + li {
+      margin-top: 0.45rem;
+    }
+
+    .role-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.73em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--rule-strong);
+    }
+
+    .js .role.is-collapsed .role-bullets li:nth-child(n+4) {
+      display: none;
+    }
+
+    .role-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      cursor: pointer;
+    }
+
+    .role-toggle::after {
+      content: "+";
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .role:not(.is-collapsed) .role-toggle::after {
+      content: "-";
+    }
+
+    .impact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.3rem;
+    }
+
+    .impact {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      padding: 0.38rem 0.66rem;
+      background: var(--paper-deep);
+      border: 1px solid var(--rule);
+      color: var(--ink-soft);
+      font-size: 0.79rem;
+      line-height: 1.2;
+    }
+
+    .impact strong {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    .skill-cluster + .skill-cluster {
+      margin-top: 2rem;
+    }
+
+    .cluster-title {
+      margin: 0;
+      padding-left: 0.9rem;
+      border-left: 2px solid var(--accent);
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .skill-list {
+      max-width: 68ch;
+      margin: 0.75rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .education-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.5rem 2rem;
+      align-items: baseline;
+    }
+
+    .education-title {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .education-year {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .education-degree {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .language-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+
+    .language-list li {
+      min-height: 7.2rem;
+      padding: 1.15rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .language-name {
+      display: block;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .language-level {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .contact-list {
+      margin: 0 0 2rem;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 6rem minmax(0, 1fr);
+      gap: 1.5rem;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-key {
+      color: var(--ink-faint);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-value {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.14rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-value a {
+      text-decoration-color: var(--accent-soft);
+    }
+
+    .closing-note {
+      max-width: 54ch;
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin-left: var(--rail-w);
+      padding: 2rem 3rem 3rem;
+      color: var(--ink-faint);
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --gap: 3.5rem;
+      }
+
+      .rail {
+        display: none;
+      }
+
+      .topbar {
+        display: block;
+      }
+
+      .page,
+      .footer {
+        margin-left: 0;
+      }
+
+      .content {
+        padding: 0 1.4rem;
+      }
+
+      section {
+        scroll-margin-top: 4.2rem;
+      }
+
+      .hero {
+        min-height: calc(100vh - 3.55rem);
+        padding-top: 3.25rem;
+      }
+
+      .hero-metrics,
+      .language-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .experience-tools {
+        grid-template-columns: 1fr;
+      }
+
+      .expand-all {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-layout {
+        gap: 1rem;
+      }
+
+      .hero-name {
+        min-height: clamp(6rem, 26vw, 8rem);
+        font-size: clamp(3.35rem, 16vw, 5rem);
+      }
+
+      .hero-metrics,
+      .language-list {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .role::before {
+        left: -1.5rem;
+      }
+
+      .role-meta,
+      .education-block,
+      .contact-list li {
+        grid-template-columns: 1fr;
+      }
+
+      .role-dates {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .contact-list li {
+        gap: 0.25rem;
+      }
+
+      .footer {
+        padding-inline: 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="rail" aria-label="Desktop navigation and contact details">
+    <div>
+      <span class="rail-kicker">Portfolio</span>
+      <p class="rail-name">Stephen Ndichu <span>Commercial Leader</span></p>
+      <nav class="rail-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#hero" class="is-active">Overview</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <address class="rail-contact">
+      <span class="rail-contact-label">Contact</span>
+      <ul>
+        <li><a href="tel:+254716443966">+254 716 443 966</a></li>
+        <li><a href="mailto:skahuthia@gmail.com">skahuthia@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/stephenndichu-579455117" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> opens in a new tab</span></a></li>
+      </ul>
+    </address>
+  </aside>
+
+  <header class="topbar" aria-label="Mobile navigation">
+    <div class="topbar-inner">
+      <span class="topbar-name">S. Ndichu</span>
+      <nav class="topbar-nav" aria-label="Primary navigation">
+        <a href="#hero" class="is-active">Overview</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#languages">Languages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main id="main" class="content">
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-layout">
+          <div class="hero-rule" aria-hidden="true"></div>
+          <div>
+            <p class="hero-kicker">Nairobi, Kenya</p>
+            <h1 id="hero-title" class="hero-name" aria-label="Stephen Ndichu"><span data-typed-name data-full-name="Stephen Ndichu" aria-hidden="true"></span><span class="typing-cursor" aria-hidden="true"></span></h1>
+          </div>
+        </div>
+
+        <p class="hero-descriptor">Commercial Leader. Electric Mobility. Nairobi, Kenya.</p>
+        <p class="hero-statement">8 years building the commercial infrastructure that puts electric vehicles into the hands of boda boda riders across Kenya -- from SACCO financing frameworks to national dealer networks.</p>
+
+        <ul class="hero-metrics" aria-label="Headline impact metrics">
+          <li class="hero-metric">
+            <span class="metric-number">600+</span>
+            <span class="metric-label">Stakeholders reached through EV demonstrations and forums</span>
+          </li>
+          <li class="hero-metric">
+            <span class="metric-number">Ksh 300M</span>
+            <span class="metric-label">Financing capacity projected through SACCO-backed frameworks</span>
+          </li>
+          <li class="hero-metric">
+            <span class="metric-number">20</span>
+            <span class="metric-label">Counties covered across Kenya's clean transport ecosystem</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience" class="section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading" class="section-heading"><span>Experience</span><span aria-hidden="true"></span></h2>
+        <div class="experience-tools">
+          <p>Roles are structured for quick scanning first: company, mandate, quantified outcomes, then deeper operating detail where needed.</p>
+          <button class="expand-all" type="button" data-expand-all aria-expanded="false">Show all role detail</button>
+        </div>
+
+        <div class="timeline">
+          <article class="role" tabindex="-1" aria-labelledby="role-roam-projects-title">
+            <div class="role-meta">
+              <div class="role-company-line"><span class="role-company">Roam</span> -- Nairobi County, Kenya</div>
+              <div class="role-dates">January 2026 to Present</div>
+            </div>
+            <h3 id="role-roam-projects-title" class="role-title">Special Projects Manager</h3>
+            <ul class="role-bullets">
+              <li>Led Kenya's inaugural EV cross-country demonstration, engaging over 600 stakeholders across 20 counties, boosting awareness by 40%.</li>
+              <li>Designed frameworks for SACCO-backed and group-guaranteed EV financing, projected to unlock Ksh. 300 million annually.</li>
+              <li>Collaborated with commercial banks and micro-lenders to develop daily repayment loan products, enhancing financial accessibility for boda riders by 70%.</li>
+              <li>Expanded dealer and after-sales network from three to eight regions, reducing customer downtime by 40%.</li>
+              <li>Coordinated multi-county forums for SACCO leadership, presenting compliance and savings-linked lending models while negotiating partnerships with over 15 SACCOs.</li>
+              <li>Managed B2C and B2B referral channels, contributing to 70% of total monthly EV unit sales.</li>
+              <li>Initiated partnerships with multiple SACCOs and rider associations, unlocking structured financing pathways for sustainable transport solutions.</li>
+              <li>Conducted over 100 activations, roadshows, and test-ride events, increasing EV lead generation by 60%.</li>
+            </ul>
+            <ul class="impact-list" aria-label="Special Projects Manager impact metrics">
+              <li class="impact"><strong>+40%</strong> Awareness</li>
+              <li class="impact"><strong>Ksh 300M</strong> Unlocked</li>
+              <li class="impact"><strong>70%</strong> Financial Access</li>
+              <li class="impact"><strong>15+</strong> SACCOs Partnered</li>
+            </ul>
+          </article>
+
+          <article class="role" tabindex="-1" aria-labelledby="role-roam-sales-title">
+            <div class="role-meta">
+              <div class="role-company-line"><span class="role-company">Roam</span> -- Nairobi County, Kenya</div>
+              <div class="role-dates">August 2024 to December 2025</div>
+            </div>
+            <h3 id="role-roam-sales-title" class="role-title">Regional Sales Marketing Manager</h3>
+            <ul class="role-bullets">
+              <li>Developed and executed regional sales and marketing strategies, increasing financed sales by 70%.</li>
+              <li>Spearheaded growth of electric bike sales across five regions in Kenya, boosting sales by 50% outside Nairobi.</li>
+              <li>Oversaw B2C, B2B, and referral sales channels, ensuring attainment of monthly and quarterly KPIs.</li>
+              <li>Led, trained, and mentored a sales team, achieving 90 to 110% of targets across multiple quarters.</li>
+              <li>Built and managed partnerships with financiers, micro-lenders, dealers, and e-commerce platforms, onboarding four new lenders.</li>
+              <li>Designed and implemented demand projections and market penetration plans for five emerging regions.</li>
+              <li>Conducted market activations, roadshows, and test-ride events that enhanced product adoption by 60%.</li>
+              <li>Represented company at over 20 trade shows and industry events to boost brand visibility.</li>
+            </ul>
+            <ul class="impact-list" aria-label="Regional Sales Marketing Manager impact metrics">
+              <li class="impact"><strong>+70%</strong> Financed Sales</li>
+              <li class="impact"><strong>+50%</strong> Outside Nairobi</li>
+              <li class="impact"><strong>5</strong> Regions Scaled</li>
+            </ul>
+          </article>
+
+          <article class="role" tabindex="-1" aria-labelledby="role-myboda-title">
+            <div class="role-meta">
+              <div class="role-company-line"><span class="role-company">MYBODA</span> -- Nairobi County, Kenya</div>
+              <div class="role-dates">January 2024 to July 2024</div>
+            </div>
+            <h3 id="role-myboda-title" class="role-title">Sales Manager</h3>
+            <ul class="role-bullets">
+              <li>Oversaw daily marketing operations, boosting loan portfolio by 60%.</li>
+              <li>Developed structures for tracking business activities, creating interactive dashboards for actionable insights.</li>
+              <li>Monitored key performance indicators, providing monthly evaluations of business success and growth.</li>
+              <li>Analyzed data to identify trends, driving actions that tripled loan book size.</li>
+              <li>Compiled management reports to guide informed decision-making for expansion of four branches.</li>
+              <li>Assessed costs of marketing activities, ensuring budget accuracy at 100%.</li>
+            </ul>
+            <ul class="impact-list" aria-label="Sales Manager impact metrics">
+              <li class="impact"><strong>+60%</strong> Loan Portfolio</li>
+              <li class="impact"><strong>3x</strong> Loan Book</li>
+              <li class="impact"><strong>4</strong> Branches Guided</li>
+            </ul>
+          </article>
+
+          <article class="role" tabindex="-1" aria-labelledby="role-watu-ops-title">
+            <div class="role-meta">
+              <div class="role-company-line"><span class="role-company">Watu Credit</span> -- Nairobi, Kenya</div>
+              <div class="role-dates">January 2021 to December 2023</div>
+            </div>
+            <h3 id="role-watu-ops-title" class="role-title">Field Operations Manager</h3>
+            <ul class="role-bullets">
+              <li>Developed communication and branding strategies, increasing client outreach by 70%.</li>
+              <li>Managed a diversified product portfolio across mobile devices, motorbikes, vehicles, and driving school services, generating 30 to 45% of total revenue and increasing cross-sell conversion by 25%.</li>
+              <li>Created innovative sales tools, including presentations for Safeboda, resulting in 40% portfolio growth.</li>
+              <li>Collaborated with over seven senior sales and branch managers to establish best practices.</li>
+              <li>Established strategic relationships with over 50 dealerships and leading motorbike manufacturers.</li>
+              <li>Represented company at over 200 organized field events, engaging with bodaboda chairmen and partners.</li>
+              <li>Managed marketing campaigns and programs, closing 150 to 200 units monthly.</li>
+            </ul>
+            <ul class="impact-list" aria-label="Field Operations Manager impact metrics">
+              <li class="impact"><strong>50+</strong> Dealerships</li>
+              <li class="impact"><strong>200</strong> Field Events</li>
+              <li class="impact"><strong>150-200</strong> Units/Month</li>
+            </ul>
+          </article>
+
+          <article class="role" tabindex="-1" aria-labelledby="role-watu-sales-title">
+            <div class="role-meta">
+              <div class="role-company-line"><span class="role-company">Watu Credit</span> -- Nairobi, Kenya</div>
+              <div class="role-dates">June 2017 to December 2020</div>
+            </div>
+            <h3 id="role-watu-sales-title" class="role-title">Salesperson</h3>
+            <ul class="role-bullets">
+              <li>Managed marketing campaigns, generating leads and closing 150 to 200 units monthly.</li>
+              <li>Created innovative sales tools that drove 40% portfolio growth.</li>
+              <li>Collaborated with over seven senior sales and branch managers to establish best marketing practices.</li>
+              <li>Represented company at over 200 organized field events.</li>
+            </ul>
+            <ul class="impact-list" aria-label="Salesperson impact metrics">
+              <li class="impact"><strong>150-200</strong> Units/Month</li>
+              <li class="impact"><strong>+40%</strong> Portfolio Growth</li>
+              <li class="impact"><strong>200</strong> Field Events</li>
+            </ul>
+          </article>
+
+          <article class="role" tabindex="-1" aria-labelledby="role-plainsview-title">
+            <div class="role-meta">
+              <div class="role-company-line"><span class="role-company">Plainsview Nursing Home</span> -- Ruiru, Kenya</div>
+              <div class="role-dates">January 2016 to May 2016</div>
+            </div>
+            <h3 id="role-plainsview-title" class="role-title">Junior Accountant</h3>
+            <ul class="role-bullets">
+              <li>Compiled general ledger entries with 100% accuracy.</li>
+              <li>Reconciled company accounts including credit cards, employee expenses, and commissions.</li>
+              <li>Submitted weekly cash flow reports to controller.</li>
+            </ul>
+            <ul class="impact-list" aria-label="Junior Accountant impact metrics">
+              <li class="impact"><strong>100%</strong> Accuracy</li>
+              <li class="impact"><strong>Weekly</strong> Cash Flow</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading" class="section-heading"><span>Skills</span><span aria-hidden="true"></span></h2>
+
+        <div class="skill-cluster">
+          <h3 class="cluster-title">Commercial Leadership</h3>
+          <p class="skill-list">Project management, Cross-functional leadership, Commercial operations, Sales strategy development, Customer relationship management</p>
+        </div>
+
+        <div class="skill-cluster">
+          <h3 class="cluster-title">Market and Financial Intelligence</h3>
+          <p class="skill-list">Market analysis, Data analysis, Financial modeling, Electric vehicle financing</p>
+        </div>
+
+        <div class="skill-cluster">
+          <h3 class="cluster-title">Industry Domain</h3>
+          <p class="skill-list">Electric mobility, SACCO financing structures, Boda boda sector, Dealer network development, B2C and B2B channel management</p>
+        </div>
+      </section>
+
+      <section id="education" class="section" aria-labelledby="education-heading">
+        <h2 id="education-heading" class="section-heading"><span>Education</span><span aria-hidden="true"></span></h2>
+        <article class="education-block">
+          <h3 class="education-title">Kenyatta University -- Ruiru Main Campus</h3>
+          <span class="education-year">2016</span>
+          <p class="education-degree">Bachelor of Economics and Finance</p>
+        </article>
+      </section>
+
+      <section id="languages" class="section" aria-labelledby="languages-heading">
+        <h2 id="languages-heading" class="section-heading"><span>Languages</span><span aria-hidden="true"></span></h2>
+        <ul class="language-list">
+          <li><span class="language-name">English</span><span class="language-level">C2 Proficient</span></li>
+          <li><span class="language-name">Swahili</span><span class="language-level">C2 Proficient</span></li>
+          <li><span class="language-name">Kikuyu</span><span class="language-level">B1 Intermediate</span></li>
+          <li><span class="language-name">Luganda</span><span class="language-level">A2 Elementary</span></li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="section-heading"><span>Contact</span><span aria-hidden="true"></span></h2>
+        <address>
+          <ul class="contact-list">
+            <li><span class="contact-key">Phone</span><span class="contact-value"><a href="tel:+254716443966">+254 716 443 966</a></span></li>
+            <li><span class="contact-key">Email</span><span class="contact-value"><a href="mailto:skahuthia@gmail.com">skahuthia@gmail.com</a></span></li>
+            <li><span class="contact-key">LinkedIn</span><span class="contact-value"><a href="https://www.linkedin.com/in/stephenndichu-579455117" target="_blank" rel="noopener noreferrer">linkedin.com/in/stephenndichu-579455117<span class="sr-only"> opens in a new tab</span></a></span></li>
+          </ul>
+          <p class="closing-note">Based in Nairobi. Open to commercial leadership roles in electric mobility, clean energy, and sustainable transport across Africa.</p>
+        </address>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">Stephen Ndichu -- Nairobi, Kenya -- 2026</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      document.documentElement.classList.add("js");
+
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var typedName = document.querySelector("[data-typed-name]");
+      var cursor = document.querySelector(".typing-cursor");
+
+      if (typedName) {
+        var fullName = typedName.getAttribute("data-full-name") || "Stephen Ndichu";
+
+        if (reducedMotion) {
+          typedName.textContent = fullName;
+          if (cursor) cursor.hidden = true;
+        } else {
+          var index = 0;
+
+          function typeNextCharacter() {
+            index += 1;
+            typedName.textContent = fullName.slice(0, index);
+
+            if (index < fullName.length) {
+              window.setTimeout(typeNextCharacter, 68);
+              return;
+            }
+
+            window.setTimeout(function () {
+              if (cursor) cursor.classList.add("is-hidden");
+            }, 2000);
+          }
+
+          window.setTimeout(typeNextCharacter, 220);
+        }
+      }
+
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll('.rail-nav a[href^="#"], .topbar-nav a[href^="#"]'));
+      var trackedLinks = navLinks.filter(function (link) {
+        return link.getAttribute("href").length > 1;
+      });
+      var sections = trackedLinks.reduce(function (items, link) {
+        var target = document.getElementById(link.getAttribute("href").slice(1));
+        if (target && items.indexOf(target) === -1) items.push(target);
+        return items;
+      }, []);
+
+      function setActiveSection(id) {
+        trackedLinks.forEach(function (link) {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        var sectionObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) setActiveSection(entry.target.id);
+          });
+        }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
+
+        sections.forEach(function (section) {
+          sectionObserver.observe(section);
+        });
+      }
+
+      var roles = Array.prototype.slice.call(document.querySelectorAll(".role"));
+      roles.forEach(function (role) {
+        var bullets = role.querySelectorAll(".role-bullets li");
+
+        if (bullets.length > 3) {
+          role.classList.add("is-collapsed");
+
+          var toggle = document.createElement("button");
+          toggle.type = "button";
+          toggle.className = "role-toggle";
+          toggle.textContent = "Show full detail";
+          toggle.setAttribute("aria-expanded", "false");
+
+          toggle.addEventListener("click", function () {
+            var collapsed = role.classList.toggle("is-collapsed");
+            toggle.textContent = collapsed ? "Show full detail" : "Show less detail";
+            toggle.setAttribute("aria-expanded", String(!collapsed));
+            syncExpandAllButton();
+          });
+
+          role.querySelector(".role-bullets").after(toggle);
+        }
+      });
+
+      var expandAll = document.querySelector("[data-expand-all]");
+
+      function syncExpandAllButton() {
+        if (!expandAll) return;
+        var collapsibleRoles = roles.filter(function (role) {
+          return role.querySelector(".role-toggle");
+        });
+        var allOpen = collapsibleRoles.length > 0 && collapsibleRoles.every(function (role) {
+          return !role.classList.contains("is-collapsed");
+        });
+        expandAll.textContent = allOpen ? "Collapse role detail" : "Show all role detail";
+        expandAll.setAttribute("aria-expanded", String(allOpen));
+      }
+
+      if (expandAll) {
+        expandAll.addEventListener("click", function () {
+          var shouldOpen = expandAll.getAttribute("aria-expanded") !== "true";
+
+          roles.forEach(function (role) {
+            var toggle = role.querySelector(".role-toggle");
+            if (!toggle) return;
+
+            role.classList.toggle("is-collapsed", !shouldOpen);
+            toggle.textContent = shouldOpen ? "Show less detail" : "Show full detail";
+            toggle.setAttribute("aria-expanded", String(shouldOpen));
+          });
+
+          syncExpandAllButton();
+        });
+
+        syncExpandAllButton();
+      }
+
+      if ("IntersectionObserver" in window) {
+        var roleObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            roles.forEach(function (role) {
+              role.classList.toggle("is-active", role === entry.target);
+            });
+          });
+        }, { rootMargin: "-28% 0px -58% 0px", threshold: 0.01 });
+
+        roles.forEach(function (role) {
+          roleObserver.observe(role);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
