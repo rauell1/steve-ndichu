@@ -11,38 +11,35 @@ A responsive, single-page portfolio website for Stephen Ndichu, a commercial lea
 
 ## Run locally
 
-Open `index.html` directly in a browser, or serve the project directory with any static web server. For example:
+Open `public/index.html` directly in a browser, or serve the project directory with any static web server. For example:
 
 ```bash
-npx serve .
+npx serve public
 ```
 
-## Deploy to Vercel
+## Deploy to Cloudflare
 
-This repository can be deployed to Vercel as a static site without additional configuration.
+The site is served by Cloudflare Workers static assets. `wrangler.jsonc` points at the `public/` directory and attaches the `steve-ndichu.rauell.systems` custom domain.
 
-1. Sign in to [Vercel](https://vercel.com/).
-2. Select **Add New → Project**.
-3. Import `rauell1/steve-ndichu` from GitHub.
-4. Leave the framework preset as **Other**.
-5. Leave the build command and output directory empty.
-6. Select **Deploy**.
+Every push to `main` runs `.github/workflows/deploy-cloudflare.yml`, which deploys with Wrangler. The workflow needs two repository secrets:
 
-After the Git repository is connected, every push to `main` will create a new production deployment. Pull requests and other branches will receive preview deployments.
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
 
-You can also deploy with the Vercel CLI:
+To preview locally:
 
 ```bash
-npx vercel
-npx vercel --prod
+npx wrangler dev
 ```
 
 ## Project structure
 
 ```text
 .
-├── index.html   # Complete portfolio site
-└── README.md    # Project documentation
+├── public/
+│   └── index.html   # Complete portfolio site
+├── wrangler.jsonc   # Cloudflare Workers configuration
+└── README.md        # Project documentation
 ```
 
 ## Repository
