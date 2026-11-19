@@ -42,9 +42,9 @@ Good-faith research that follows this policy is welcome. Do not access, change o
 
 ## Security practices in this project
 
-- Secrets are never committed. `.env*` files are ignored by Git, `.env.example` holds placeholders only, and production values are stored as Cloudflare Worker secrets.
-- Access control: No accounts or forms that store data.
-- Dependencies are installed from a committed lockfile; review `npm audit` output before upgrading packages.
+- The site is a single static page with no server code, no dependencies and no environment variables or secrets.
+- There are no accounts and no forms that store data.
+- Deployment credentials (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`) live only in GitHub repository secrets.
 
 ## For contributors
 
