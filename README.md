@@ -1,4 +1,20 @@
-# Stephen Ndichu portfolio website
+<!-- header:start -->
+<div align="center">
+
+# Stephen Ndichu: portfolio
+
+**Single-page portfolio website for Stephen Ndichu, commercial leader and electric mobility specialist in Nairobi. Static HTML on Cloudflare Workers.**
+
+[![Live: steve-ndichu.rauell.workers.dev](https://img.shields.io/badge/Live-steve--ndichu.rauell.workers.dev-0d9488?style=for-the-badge&logo=cloudflare&logoColor=white)](https://steve-ndichu.rauell.workers.dev) ![Status: live](https://img.shields.io/badge/Status-Live-2ea44f?style=for-the-badge) ![Public repository](https://img.shields.io/badge/Repo-Public-555555?style=for-the-badge&logo=github)
+
+![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=flat-square&logo=html5&logoColor=white) ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white)
+
+[Live site](https://steve-ndichu.rauell.workers.dev) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Code of conduct](CODE_OF_CONDUCT.md)
+
+</div>
+
+---
+<!-- header:end -->
 
 A responsive, single-page portfolio website for Stephen Ndichu, a commercial leader and electric mobility specialist based in Nairobi, Kenya.
 
